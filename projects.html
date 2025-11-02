@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Namyalg</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Pro(jects|ducts)</a></li>
+            <li><a href="publications.html">Publications</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Pro(<span class="title-orange">jects</span>|<span class="title-blue">ducts</span>)</h1>
+
+        <p style="text-align: center;">Never say <b>NO</b> to building, focus is on <b>real-world impact</b>, couple of projects I've worked on:</p>
+
+        <div class="project-grid">
+            <div class="project-card product-card" onclick="openModal('invesho')">
+                <h3>Invesho AI</h3>
+                <p>Fundraising is exhausting, can AI help?</p>
+            </div>
+
+            <div class="project-card project-card" onclick="openModal('paramount')">
+                <h3>Consultancy Project - Paramount Instruments</h3>
+                <p>Assessment of fabric quality</p>
+            </div>
+
+            <div class="project-card project-card" onclick="openModal('greenhouse')">
+                <h3>Smart Greenhouse</h3>
+                <p>A utopian vision of an IoT-enabled world</p>
+            </div>
+
+            <div class="project-card product-card" onclick="openModal('remo')">
+                <h3>REMO</h3>
+                <p>How can we as students have a hassle-free club recruitment interview experience?</p>
+            </div>
+
+            <div class="project-card project-card" onclick="openModal('exploreml')">
+                <h3>Explore ML</h3>
+                <p>To implement algorithms and reason through the math</p>
+            </div>
+
+            <div class="project-card project-card" onclick="openModal('clangplugin')">
+                <h3>Clang Diagnostic Plugin</h3>
+                <p>Custom diagnostics and analysis tools for C/C++ code</p>
+            </div>
+
+            <div class="project-card product-card" onclick="openModal('remotvital')">
+                <h3>RemoVital</h3>
+                <p>IoT-based remote health monitoring system for patients</p>
+            </div>
+
+            <div class="project-card project-card" onclick="openModal('firclassifier')">
+                <h3>FIR Classifier</h3>
+                <p>Automated cybercrime classification system using machine learning</p>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modalContent">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Namyalg. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const projectData = {
+            invesho: {
+                title: "Invesho AI",
+                role: "Chief Technology Officer, Co-Founder",
+                description: [
+                    "An AI-driven platform to automate fundraising for founders in pre-seed and seed stages",
+                    "Gained traction of over 2000+ users from 36 countries with 10% paying customers",
+                    "Spearheaded product charter and developed agentic web search to match founders to investors globally",
+                    `Built an intelligent CRM and <a href="https://chromewebstore.google.com/detail/email-finder-for-linkedin/fpadbmgbpihbiedjdhjjknnjalgnpkld" target="_blank" rel="noopener noreferrer">Chrome extension</a> for LinkedIn to simplify outreach`
+                ],
+                links: [
+                    { text: "Go to Product", url: "https://invesho.com" }
+                ]
+            },
+            paramount: {
+                title: "Consultancy Project - Paramount Instruments",
+                role: "Computer Vision Engineer",
+                description: [
+                    "Designed and implemented algorithms to identify the count of weft and warp yarns",
+                    "Enabled quality assessment across diverse weave patterns and types",
+                    "Utilized image processing techniques to analyze fabric structure",
+                    "Extracted yarn orientations, densities, and counts, deployed on a Raspberry Pi"
+                ],
+                link: "https://paramountinstruments.com/" // Add GitHub/YouTube link here
+            },
+            greenhouse: {
+                title: "Smart Greenhouse",
+                role: "Full-stack IoT Engineer",
+                description: [
+                    "Designed and prototyped a smart greenhouse using Arduino and multi-sensor integration",
+                    "Implemented real-time environment monitoring with automated control systems",
+                    "Built controls for irrigation, ventilation, and lighting triggered by sensor data",
+                    "Developed a mobile application with authentication for remote monitoring and control"
+                ],
+                link: "https://docs.google.com/document/d/1CAFm4NKXbI7kgYpmLaurw9zjSoUEOFmdxhvHHRDQWiI/edit?usp=sharing" // Add GitHub/YouTube link here
+            },
+            remo: {
+                title: "REMO",
+                role: "Full-stack Engineer",
+                description: [
+                    "Developed an integrated platform to facilitate remote technical interviews",
+                    "Implemented real-time audio/video interface using WebRTC",
+                    "Added real-time chat and virtual whiteboard with Socket.io",
+                    `Integrated GitHub V3 API for candidate profiles and <a href="https://nuvepro.com" target="_blank" rel="noopener noreferrer">Nuvepro</a>'s sandboxed Linux environment`
+                ],
+                link: "https://youtu.be/YgAzLCTPRB8?si=KbvDZmt4ucB-A_UU" // Add GitHub/YouTube link here
+            },
+            exploreml: {
+                title: "Explore ML",
+                role: "Machine Learning Researcher",
+                description: [
+                    "A comprehensive repository for implementing machine learning algorithms from scratch",
+                    "Focus on understanding the mathematical foundations behind ML techniques",
+                    "Includes implementations of supervised and unsupervised learning algorithms",
+                    "Emphasis on reasoning through the math and building intuition for ML concepts"
+                ],
+                link: "https://github.com/Namyalg/ML" // GitHub repository link
+            },
+            clangplugin: {
+                title: "Clang Diagnostic Plugin",
+                role: "Compiler Engineer",
+                description: [
+                    "Implements a Clang diagnostic to detect unchecked 'malloc' return values",
+                    "Identifies when malloc pointers are used without null checking",
+                    "Prevents potential null pointer dereferences from failed allocations",
+                    "Enhances C/C++ code safety through compile-time analysis"
+                ],
+                links: [
+                    { text: "View Repository", url: "https://github.com/Namyalg/clang-diagnostic-plugin" },
+                    { text: "View Poster", url: "https://github.com/Namyalg/clang-diagnostic-plugin/blob/master/CD%20EL.png" }
+                ]
+            },
+            remotvital: {
+                title: "RemoVital",
+                role: "Full-Stack IoT Engineer",
+                description: [
+                    "Designed and implemented an IoT-based health monitoring system to remotely capture and transmit critical patient vitals (heart rate, body temperature, SpO2) using sensors integrated with ESP32 microcontroller",
+                    "Developed a full-stack solution integrating hardware sensors, WiFi connectivity, and cloud infrastructure using ThingSpeak for real-time data visualization and remote clinical monitoring",
+                    "Built a mobile application with dual interfaces for doctors and patients, enabling secure access to patient vital trends through interactive graphs and dashboards for remote monitoring"
+                ],
+                links: [
+                    { text: "View Product in the Making", url: "https://drive.google.com/file/d/1iWFpXkFi6khXZnmRQjHDbeVBn08VQehg/view" },
+                    { text: "View Poster", url: "assets/remo-vital.jpg" }
+                ]
+            },
+            firclassifier: {
+                title: "FIR Classifier",
+                role: "Machine Learning Engineer",
+                description: [
+                    "Developed an automated cybercrime classification system using machine learning to extract and classify First Information Reports (FIRs) from multiple Indian languages into predefined cybercrime categories, achieving 97.9% accuracy with Random Forest classifier after data augmentation",
+                    "Implemented a complete pipeline integrating OCR for text extraction, Google Translate API for language conversion, CountVectorizer for feature extraction, and comparison of SVM, Naive Bayes, and Random Forest models to identify the optimal classification approach",
+                    "Created a user-friendly web portal enabling police officers and citizens to upload FIR documents or manually enter complaint details, with automatic cybercrime classification to accelerate justice dispensation and reduce manual case processing burden"
+                ],
+                link: "https://github.com/Namyalg/FIR-Classifier"
+            }
+        };
+
+        function openModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            const modalContent = document.getElementById('modalContent');
+            const project = projectData[projectId];
+
+            let linksHtml = '';
+            if (project.links && project.links.length > 0) {
+                linksHtml = `<p>${project.links.map(link =>
+                    `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}</a>`
+                ).join(' | ')}</p>`;
+            } else if (project.link) {
+                let linkText = 'Go to Product';
+                if (projectId === 'paramount') {
+                    linkText = 'Built This For';
+                } else if (projectId === 'greenhouse') {
+                    linkText = 'Go to Project';
+                } else if (projectId === 'firclassifier') {
+                    linkText = 'Go to Repository';
+                }
+                linksHtml = `<p><a href="${project.link}" target="_blank" rel="noopener noreferrer">${linkText}</a></p>`;
+            } else {
+                linksHtml = '<p><em>Link coming soon</em></p>';
+            }
+
+            modalContent.innerHTML = `
+                <h2>${project.title}</h2>
+                <h3>${project.role}</h3>
+                <ul>
+                    ${project.description.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+                ${linksHtml}
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
