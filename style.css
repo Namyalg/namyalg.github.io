@@ -21,11 +21,32 @@ nav {
     border-bottom: 1px solid #000;
 }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.headshot {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000;
+    transition: transform 0.3s ease;
+}
+
+.headshot:hover {
+    transform: scale(1.05);
+}
+
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 40px;
+    margin: 0;
 }
 
 nav a {
