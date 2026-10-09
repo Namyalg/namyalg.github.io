@@ -99,9 +99,7 @@
                     "Spearheaded product charter and developed agentic web search to match founders to investors globally",
                     `Built an intelligent CRM and <a href="https://chromewebstore.google.com/detail/email-finder-for-linkedin/fpadbmgbpihbiedjdhjjknnjalgnpkld" target="_blank" rel="noopener noreferrer">Chrome extension</a> for LinkedIn to simplify outreach`
                 ],
-                links: [
-                    { text: "Go to Product", url: "https://invesho.com" }
-                ]
+                links: []
             },
             paramount: {
                 title: "Consultancy Project - Paramount Instruments",
@@ -206,7 +204,7 @@
                     linkText = 'Go to Repository';
                 }
                 linksHtml = `<p><a href="${project.link}" target="_blank" rel="noopener noreferrer">${linkText}</a></p>`;
-            } else {
+            } else if (!project.links) {
                 linksHtml = '<p><em>Link coming soon</em></p>';
             }
 
