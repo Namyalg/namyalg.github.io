@@ -99,7 +99,8 @@
                     "Spearheaded product charter and developed agentic web search to match founders to investors globally",
                     `Built an intelligent CRM and <a href="https://chromewebstore.google.com/detail/email-finder-for-linkedin/fpadbmgbpihbiedjdhjjknnjalgnpkld" target="_blank" rel="noopener noreferrer">Chrome extension</a> for LinkedIn to simplify outreach`
                 ],
-                links: []
+                links: [],
+                video: { src: "assets/invesho-demo.mp4", poster: "assets/invesho-demo-poster.jpg" }
             },
             paramount: {
                 title: "Consultancy Project - Paramount Instruments",
@@ -208,9 +209,14 @@
                 linksHtml = '<p><em>Link coming soon</em></p>';
             }
 
+            const videoHtml = project.video
+                ? `<video class="project-video" controls muted playsinline preload="metadata" poster="${project.video.poster}" src="${project.video.src}"></video>`
+                : '';
+
             modalContent.innerHTML = `
                 <h2>${project.title}</h2>
                 <h3>${project.role}</h3>
+                ${videoHtml}
                 <ul>
                     ${project.description.map(item => `<li>${item}</li>`).join('')}
                 </ul>
@@ -221,6 +227,7 @@
         }
 
         function closeModal() {
+            document.querySelectorAll('#modalContent video').forEach(v => v.pause());
             document.getElementById('projectModal').style.display = 'none';
         }
 
@@ -228,6 +235,7 @@
         window.onclick = function(event) {
             const modal = document.getElementById('projectModal');
             if (event.target === modal) {
+                document.querySelectorAll('#modalContent video').forEach(v => v.pause());
                 modal.style.display = 'none';
             }
         }
