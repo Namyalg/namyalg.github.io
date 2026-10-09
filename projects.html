@@ -133,7 +133,8 @@
                     "Added real-time chat and virtual whiteboard with Socket.io",
                     `Integrated GitHub V3 API for candidate profiles and <a href="https://nuvepro.com" target="_blank" rel="noopener noreferrer">Nuvepro</a>'s sandboxed Linux environment`
                 ],
-                link: "https://youtu.be/YgAzLCTPRB8?si=KbvDZmt4ucB-A_UU" // Add GitHub/YouTube link here
+                links: [],
+                youtube: "YgAzLCTPRB8"
             },
             exploreml: {
                 title: "Explore ML",
@@ -209,9 +210,12 @@
                 linksHtml = '<p><em>Link coming soon</em></p>';
             }
 
-            const videoHtml = project.video
-                ? `<video class="project-video" controls playsinline preload="metadata" poster="${project.video.poster}" src="${project.video.src}"></video>`
-                : '';
+            let videoHtml = '';
+            if (project.video) {
+                videoHtml = `<video class="project-video" controls playsinline preload="metadata" poster="${project.video.poster}" src="${project.video.src}"></video>`;
+            } else if (project.youtube) {
+                videoHtml = `<iframe class="project-video" src="https://www.youtube-nocookie.com/embed/${project.youtube}" title="${project.title} demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            }
 
             modalContent.innerHTML = `
                 <h2>${project.title}</h2>
@@ -227,16 +231,15 @@
         }
 
         function closeModal() {
-            document.querySelectorAll('#modalContent video').forEach(v => v.pause());
             document.getElementById('projectModal').style.display = 'none';
+            document.getElementById('modalContent').innerHTML = '';
         }
 
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('projectModal');
             if (event.target === modal) {
-                document.querySelectorAll('#modalContent video').forEach(v => v.pause());
-                modal.style.display = 'none';
+                closeModal();
             }
         }
     </script>

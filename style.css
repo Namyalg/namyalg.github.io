@@ -234,6 +234,11 @@ footer {
     background-color: #000;
 }
 
+iframe.project-video {
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
 .modal-content {
     background-color: #fff;
     margin: 10% auto;
