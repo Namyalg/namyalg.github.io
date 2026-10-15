@@ -117,9 +117,15 @@ p {
     color: #666;
 }
 
+.section-divider {
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 50px 0 0;
+}
+
 .news {
     max-width: 600px;
-    margin: 50px auto 0;
+    margin: 30px auto 0;
 }
 
 .news h2 {
