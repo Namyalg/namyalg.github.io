@@ -28,15 +28,18 @@ nav {
     gap: 40px;
 }
 
-.profile-photo {
-    display: block;
-    width: 180px;
-    height: 180px;
+.headshot {
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     object-fit: cover;
     object-position: 50% 30%;
     border: 2px solid #000;
-    margin: 0 auto 24px;
+    transition: transform 0.3s ease;
+}
+
+.headshot:hover {
+    transform: scale(1.05);
 }
 
 nav ul {
@@ -120,8 +123,8 @@ p {
 }
 
 .news h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
+    font-size: 22px;
+    margin-bottom: 4px;
 }
 
 .news table {
@@ -134,11 +137,11 @@ p {
     text-align: left;
     vertical-align: top;
     white-space: nowrap;
-    padding: 4px 24px 4px 0;
+    padding: 6px 24px 14px 0;
 }
 
 .news td {
-    padding: 4px 0;
+    padding: 6px 0 14px;
 }
 
 .news a {
