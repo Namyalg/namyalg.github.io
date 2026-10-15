@@ -28,17 +28,15 @@ nav {
     gap: 40px;
 }
 
-.headshot {
-    width: 70px;
-    height: 70px;
+.profile-photo {
+    display: block;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: 50% 30%;
     border: 2px solid #000;
-    transition: transform 0.3s ease;
-}
-
-.headshot:hover {
-    transform: scale(1.05);
+    margin: 0 auto 24px;
 }
 
 nav ul {
@@ -114,6 +112,42 @@ p {
     text-align: center;
     margin-top: 20px;
     color: #666;
+}
+
+.news {
+    max-width: 600px;
+    margin: 50px auto 0;
+}
+
+.news h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.news table {
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+.news th {
+    font-weight: 600;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+    padding: 4px 24px 4px 0;
+}
+
+.news td {
+    padding: 4px 0;
+}
+
+.news a {
+    color: #4285F4;
+    text-decoration: none;
+}
+
+.news a:hover {
+    text-decoration: underline;
 }
 
 .social-section {
